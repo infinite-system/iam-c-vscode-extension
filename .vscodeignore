@@ -1,0 +1,5 @@
+.gitignore
+src/**
+node_modules/**
+!dist/**
+.github/**

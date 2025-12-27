@@ -1,0 +1,46 @@
+{
+  "name": "iam-c",
+  "displayName": "iam-c",
+  "description": "IAM-C – Invariant Architecture Model C – Official Package.",
+  "version": "0.0.1",
+  "publisher": "systems-infinite",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/infinite-system/iam-c"
+  },
+  "engines": { "vscode": "^1.90.0" },
+  "license": "MIT",
+  "categories": ["Other"],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:objective-c",
+    "onLanguage:objective-cpp",
+    "onCommand:iamcNav.reindex"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "IAM-C Navigation",
+      "properties": {
+        "iamcNav.exclude": {
+          "type": "string",
+          "default": "**/{.git,node_modules,dist,build,out,target}/**",
+          "description": "Glob exclude for workspace search."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --platform=node --external:vscode --outfile=dist/extension.js",
+    "watch": "esbuild src/extension.ts --bundle --platform=node --external:vscode --outfile=dist/extension.js --watch",
+    "package": "vsce package",
+    "publish": "npm run build && vsce publish"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0",
+    "vsce": "latest",
+    "typescript": "^5.6.3",
+    "@types/vscode": "^1.90.0"
+  }
+}
