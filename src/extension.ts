@@ -81,7 +81,7 @@ async function getFileText(uri: vscode.Uri): Promise<FileCache> {
 function parseUseClassMappings(text: string): Map<string, string> {
   const map = new Map<string, string>();
   const re =
-    /\bIAMC_USE_CLASS\s*\(\s*([A-Za-z0-9_]\w*)\s*,\s*([A-Za-z0-9_]\w*)\s*\)/g;
+    /\bIAMC_USING\s*\(\s*([A-Za-z0-9_]\w*)\s*,\s*([A-Za-z0-9_]\w*)\s*\)/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text))) map.set(m[2], m[1]);
   return map;

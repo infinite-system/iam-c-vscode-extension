@@ -2,7 +2,7 @@
   "name": "iam-c",
   "displayName": "iam-c",
   "description": "IAM-C – Invariant Architecture Model C – Official Package.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "systems-infinite",
   "repository": {
     "type": "git",
